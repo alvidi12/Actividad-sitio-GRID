@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.layout {
+    display: grid;
+    grid-template-areas: "encabezado encabezado" 
+                        "menu contenido"
+                        "pie pie";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.encabezado {
+    grid-area: encabezado;
+    background-color: #4a7c59;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.encabezado img {
+    width: 100px;
+    height: 100px;
+    ;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #8b4513;
+    padding: 20px;
+}
+
+.menu h2, h3 {
+    color: white;
+    margin-bottom: px;
+    font-size: 20px;
+}
+
+.enlace a {
+    margin-bottom: 10px;
+    color: #f5deb3;
+    text-decoration: none;
+    display: block;
+    padding: 22px;
+    background-color: #654321;
+    border-radius: 5px;
+}
+
+.enlace a:hover {
+    background-color: #a0522d;
+    color: rgb(255, 255, 255); 
+    cursor: pointer;
+}
+
+.contenido {
+    grid-area: contenido;
+    background-color: #f5deb3;
+    padding: 20px;
+}
+
+.contenido h2 {
+    color: #654321;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta {
+    background-color: white;
+    border: 2px solid #8b4513;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta h3, p {
+    color: #654321;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.pie {
+    grid-area: pie;
+    background-color: #2f4f2f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.pie p, h2 {
+    color: aliceblue;
+    
+
+}
+
+.enlaces-pie a {
+    color: #f5deb3;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #f5deb3;
+    border-radius: 3px;
+}
+
+.enlaces-pie a:hover {
+    background-color: #f5deb3;
+    color: #2f4f2f;
+}
+
+@media(min-width: 1201px) and (max-width: 1400px) {
+    .layout {
+        grid-template-areas: "encabezado"
+                            "menu menu" 
+                           "contenido"
+                           "pie";
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
